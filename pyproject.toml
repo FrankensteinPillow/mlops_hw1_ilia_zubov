@@ -1,7 +1,10 @@
 [project]
-name = "Homework N1"
+name = "homework_1"
 version = "0.1.0"
 description = "Homework 1. Topic: 'Fundamentals of Reproducible Machine Learning. MLOps Lifecycle.'"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "dvc>=3.64.0",
+    "mlflow>=3.6.0",
+]
