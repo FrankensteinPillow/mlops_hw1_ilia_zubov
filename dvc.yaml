@@ -1,0 +1,20 @@
+stages:
+  prepare:
+    cmd: python src/prepare.py data/raw/iris.csv
+    deps:
+    - data/raw/iris.csv
+    - src/prepare.py
+    params:
+    - prepare.seed
+    - prepare.split
+    outs:
+    - data/prepared
+  train:
+    cmd: python src/train.py data/prepared model.pkl
+    deps:
+    - data/prepared
+    - src/train.py
+    params:
+    - train.seed
+    outs:
+    - model.pkl
