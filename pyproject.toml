@@ -7,4 +7,8 @@ requires-python = ">=3.12"
 dependencies = [
     "dvc>=3.64.0",
     "mlflow>=3.6.0",
+    "numpy>=2.3.5",
+    "pandas>=2.3.3",
+    "ruff>=0.14.6",
+    "scikit-learn>=1.7.2",
 ]

@@ -1,3 +1,4 @@
 .env
 mlflow.db
 /model.pkl
+/metrics.json

@@ -1,6 +1,6 @@
 stages:
   prepare:
-    cmd: python src/prepare.py data/raw/iris.csv
+    cmd: "python src/prepare.py data/raw/iris.csv"
     deps:
     - data/raw/iris.csv
     - src/prepare.py
@@ -9,12 +9,24 @@ stages:
     - prepare.split
     outs:
     - data/prepared
+
   train:
     cmd: python src/train.py data/prepared model.pkl
     deps:
     - data/prepared
+    - data/prepared/X_train.csv
+    - data/prepared/y_train.csv
     - src/train.py
     params:
     - train.seed
     outs:
     - model.pkl
+
+  test:
+    cmd: python src/test.py data/prepared model.pkl
+    deps:
+    - data/prepared
+    - data/prepared/X_test.csv
+    - data/prepared/y_test.csv
+    metrics:
+      - metrics.json
