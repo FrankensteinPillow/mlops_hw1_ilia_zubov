@@ -16,17 +16,12 @@ stages:
     - data/prepared
     - data/prepared/X_train.csv
     - data/prepared/y_train.csv
+    - data/prepared/X_test.csv
+    - data/prepared/y_test.csv
     - src/train.py
     params:
     - train.seed
     outs:
     - model.pkl
-
-  test:
-    cmd: python src/test.py data/prepared model.pkl
-    deps:
-    - data/prepared
-    - data/prepared/X_test.csv
-    - data/prepared/y_test.csv
     metrics:
       - metrics.json

@@ -10,6 +10,7 @@ PARAMS = params_show()["prepare"]
 
 def main():
     print(f"{PARAMS=}")
+
     data_path = Path(sys.argv[1])
     print(f"Data file path: '{data_path}'")
     df = pd.read_csv(data_path, sep=",")
