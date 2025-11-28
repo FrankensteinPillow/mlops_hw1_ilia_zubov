@@ -51,6 +51,9 @@ stages:
       size: 2575
     params:
       params.yaml:
+        train.max_depth: 3
+        train.min_samples_leaf: 1
+        train.min_samples_split: 2
         train.seed: 42
     outs:
     - path: metrics.json
